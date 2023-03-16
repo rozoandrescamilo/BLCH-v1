@@ -102,21 +102,21 @@ Como requisito es necesario tener creada una App para la gestión de contratos e
 
 Dentro de la App creada se inicia un nuevo smart contract, para este caso se importa el archivo del contrato desde una carpeta local:
 
-[![1](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/1.png?raw=true "1")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/1.png?raw=true "1")
+[![1](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/1.png "1")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/1.png "1")
 
 Luego, se deben ingresar los detalles del proyecto como nombre, versión y seleccionar el archivo del contranto.
 
 Para este proceso se utiliza el contrato <POstatusValidator.sol>, un contrato inteligente que tiene como fin crear un método para registrar y consultar los diferentes estados posibles de una Purchase Order desde TO BE CONFIRMED hasta BOOKING REQUEST. Se recomienda ver el funcionamiento de este contrato para entender de mejor manera: [https://github.com/rozoandrescamilo/Smart-Contract-para-consultar-estados-de-una-Purchase-Order](https://github.com/rozoandrescamilo/Smart-Contract-para-consultar-estados-de-una-Purchase-Order "https://github.com/rozoandrescamilo/Smart-Contract-para-consultar-estados-de-una-Purchase-Order")
 
-[![2](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/2.png?raw=true "2")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/2.png?raw=true "2")
+[![2](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/2.png "2")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/2.png "2")
 
 Creada la nueva instancia del contrato se adiciona la Gateway API que es una consola Swagger para la gestión del contrato y transacciones.
 
-[![3](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/3.png?raw=true "3")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/3.png?raw=true "3")
+[![3](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/3.png "3")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/3.png "3")
 
 Una vez finalizado el ingreso de detalles se mostrará los parametros de la versión y el contrato debe pasar de status Compiling a Compiled para poder continuar.
 
-[![4](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/4.png?raw=true "4")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/4.png?raw=true "4")
+[![4](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/4.png "4")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/4.png "4")
 
 Después se mostrará detalles del Smart Contract donde se podran realizar varias actividades con API GATEWAY:
 
@@ -126,24 +126,26 @@ Después se mostrará detalles del Smart Contract donde se podran realizar varia
 
 - Enviar transacciones: Aproveche la API para interactuar con contratos inteligentes en cadena existentes al pasar la dirección del contrato como parámetro en la llamada.
 
-[![5](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/5.png?raw=true "5")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/5.png?raw=true "5")
+[![5](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/5.png "5")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/5.png "5")
 
 ### Gestión de smart contract con REST API Gateway
 
 La interfaz de usuario Swagger incorporada se despliega dando clic en el boton VIEW GATEWAY API y se pueden visualizar los servicios web de acceso y gestión de datos de organizaciones y proyectos a través de REST APIs.
 
-[![6](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/6.png?raw=true "6")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/6.png?raw=true "6")
+[![6](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/6.png "6")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/6.png "6")
 
-| Servicio POST  | Link API | Params (key:value) | Headers (key:value) | Body (tipo raw JSON) |
-| ------------- | ------------- | ------------- | ------------- |
-| **POST/constructor()** | https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gateways/u0t3eu9oq8/?kld-from=0x527e08ea398d607e898eb39176894f1815bfeb0b&kld-sync=true  | kId-from: 0x527e08ea398d607e898eb39176894f1815bfeb0b, kld-sync: true | Authorization: Basic dTB3anJrZzRjZTpfUHRZdDBkWWFSenZ6MDBnNU01d1p1WU13M2xMUFdhOHJMZzQwMEU1SXJ3 | ABI generado al compilar smart contract |
-| **POST/{address}/registerPO** | https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gateways/u0t3eu9oq8/0xc050386500b1b2c8706627bebc622c4bcd6cebff/RegisterPO?kld-from=0x527e08ea398d607e898eb39176894f1815bfeb0b&kld-sync=true | kId-from: 0x527e08ea398d607e898eb39176894f1815bfeb0b, kld-sync: true | Authorization: Basic dTB3anJrZzRjZTpfUHRZdDBkWWFSenZ6MDBnNU01d1p1WU13M2xMUFdhOHJMZzQwMEU1SXJ3 | "POID": "1234", "userWallet": "0x527e08ea398d607e898eb39176894f1815bfeb0b" |
-| **POST/{address}/ParameterValidator** | https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gateways/u0t3eu9oq8/0xc050386500b1b2c8706627bebc622c4bcd6cebff/ParameterValidator?kld-from=0x527e08ea398d607e898eb39176894f1815bfeb0b&kld-sync=true | kId-from: 0x527e08ea398d607e898eb39176894f1815bfeb0b, kld-sync: true | Authorization: Basic dTB3anJrZzRjZTpfUHRZdDBkWWFSenZ6MDBnNU01d1p1WU13M2xMUFdhOHJMZzQwMEU1SXJ3 | "input": "1234", "input1": "0" |
-| **POST/{address}/registerStep** | https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gateways/u0t3eu9oq8/0xc050386500b1b2c8706627bebc622c4bcd6cebff/RegisterStep?kld-from=0x527e08ea398d607e898eb39176894f1815bfeb0b&kld-sync=true | kId-from: 0x527e08ea398d607e898eb39176894f1815bfeb0b, kld-sync: true | Authorization: Basic dTB3anJrZzRjZTpfUHRZdDBkWWFSenZ6MDBnNU01d1p1WU13M2xMUFdhOHJMZzQwMEU1SXJ3 | "POID": "1234", "metadata": "Data Encode", "poType": "1", "userWallet": "0x527e08ea398d607e898eb39176894f1815bfeb0b" |
+Los servicios POST y los parámetros ligados que se usarán:
+
+| Servicio POST | Link API | Params (key:value) | Headers (key:value) | Body (tipo raw JSON) |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| **POST/constructor()**      | https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gateways/u0t3eu9oq8/?kld-from=0x527e08ea398d607e898eb39176894f1815bfeb0b&kld-sync=true      | kId-from: 0x527e08ea398d607e898eb39176894f1815bfeb0b, kld-sync: true      | Authorization: Basic dTB3anJrZzRjZTpfUHRZdDBkWWFSenZ6MDBnNU01d1p1WU13M2xMUFdhOHJMZzQwMEU1SXJ3      | ABI generado al compilar smart contract      |
+| **POST/{address}/registerPO**      | https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gateways/u0t3eu9oq8/0xc050386500b1b2c8706627bebc622c4bcd6cebff/RegisterPO?kld-from=0x527e08ea398d607e898eb39176894f1815bfeb0b&kld-sync=true      | kId-from: 0x527e08ea398d607e898eb39176894f1815bfeb0b, kld-sync: true      | CAuthorization: Basic dTB3anJrZzRjZTpfUHRZdDBkWWFSenZ6MDBnNU01d1p1WU13M2xMUFdhOHJMZzQwMEU1SXJ3      | "POID": "1234", "userWallet": "0x527e08ea398d607e898eb39176894f1815bfeb0b"      |
+| **POST/{address}/ParameterValidator**      | https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gateways/u0t3eu9oq8/0xc050386500b1b2c8706627bebc622c4bcd6cebff/ParameterValidator?kld-from=0x527e08ea398d607e898eb39176894f1815bfeb0b&kld-sync=true      | kId-from: 0x527e08ea398d607e898eb39176894f1815bfeb0b, kld-sync: true      | Authorization: Basic dTB3anJrZzRjZTpfUHRZdDBkWWFSenZ6MDBnNU01d1p1WU13M2xMUFdhOHJMZzQwMEU1SXJ3      | "input": "1234", "input1": "0"      |
+| **POST/{address}/registerStep**      | https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gateways/u0t3eu9oq8/0xc050386500b1b2c8706627bebc622c4bcd6cebff/RegisterStep?kld-from=0x527e08ea398d607e898eb39176894f1815bfeb0b&kld-sync=true      | kId-from: 0x527e08ea398d607e898eb39176894f1815bfeb0b, kld-sync: true      | Authorization: Basic dTB3anJrZzRjZTpfUHRZdDBkWWFSenZ6MDBnNU01d1p1WU13M2xMUFdhOHJMZzQwMEU1SXJ3      | "POID": "1234", "metadata": "Data Encode", "poType": "1", "userWallet": "0x527e08ea398d607e898eb39176894f1815bfeb0b"      |
 
 En el **POST/constructor()** se debe agregar el archivo ABI generado en la compilación del contrato y hacer clic en EJECUTAR.
 
-[![7](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/7.png?raw=true "7")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/7.png?raw=true "7")
+[![7](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/7.png "7")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/7.png "7")
 
 ABI del contrato compilado:
 
@@ -287,7 +289,7 @@ ABI del contrato compilado:
 
 Como respuesta se obtiene un archivo JSON donde se realiza una solicitud POST usando la API de Kaleido. Esta solicitud se utiliza para crear una nueva puerta de enlace en la red Kaleido. El contenido del archivo JSON incluye información sobre los parámetros de la solicitud, tales como la dirección de la cuenta de la que se va a realizar la solicitud, la ABI de la aplicación, entre otros.
 
-[![8](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/8.png?raw=true "8")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/8.png?raw=true "8")
+[![8](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/8.png "8")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/8.png "8")
 
 ## Gestión del flujo del contrato y documentación de REST API con POSTMAN
 
@@ -295,23 +297,23 @@ Para generar la documentación necesaria para la integración con Frontend, se u
 
 Se selecciona el boton SEND A REQUEST para comenzar la interacción.
 
-[![9](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/9.png?raw=true "9")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/9.png?raw=true "9")
+[![9](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/9.png "9")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/9.png "9")
 
 ### Crear smart crontract con el POST/constructor()
 
 Teniendo en cuenta el archivo JSON de respuesta por ejecutar el ABI en la REST API de Kaleido, se debe extraer la URL del Curl: "https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gateways/u0t3eu9oq8/?kld-from=0x527e08ea398d607e898eb39176894f1815bfeb0b&kld-sync=true" y agregarla como un llamado POST en POSTMAN. Al ingresar el link reconoce parámetros de la API en la pestaña **Params.** 
 
-[![50](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/50.png?raw=true "50")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/50.png?raw=true "50")
+[![50](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/50.png "50")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/50.png "50")
 
-[![10](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/10.png?raw=true "10")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/10.png?raw=true "10")
+[![10](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/10.png "10")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/10.png "10")
 
 Luego, en la pestaña **Headers** se debe agregar la Key "Authorization" y como valor "Basic dTB3anJrZzRjZTpfUHRZdDBkWWFSenZ6MDBnNU01d1p1WU13M2xMUFdhOHJMZzQwMEU1SXJ3" que se encuentra en el archivo JSON de salida por ejecutar el ABI en la REST API de Kaleido.
 
-[![11](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/11.png?raw=true "11")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/11.png?raw=true "11")
+[![11](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/11.png "11")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/11.png "11")
 
 En la pestaña de **Body** se selecciona el tipo Raw ya que es texto plano y el archivo de tipo JSON, dentro de este se debe pegar el archivo ABI de la compilación del contrato. Una vez realizada esta configuración ya es posible dar clic en **Send** para enviar la solicitud a la API.
 
-[![12](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/12.png?raw=true "12")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/12.png?raw=true "12")
+[![12](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/12.png "12")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/12.png "12")
 
 Se obtendra como output una respuesta del servidor similar a la de API REST de Kaliedo, donde se pueden ver parámetros de la transacción realizada, que le pueden ser de interés al usuario a lo largo de todo el flujo del proceso en la gestión de datos. Algunos de los términos relevantes en la respuesta incluyen:
 
@@ -325,7 +327,7 @@ Se obtendra como output una respuesta del servidor similar a la de API REST de K
 
 - **blockNumber:** número del bloque utilizado en la transacción.
 
-[![13](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/13.png?raw=true "13")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/13.png?raw=true "13")
+[![13](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/13.png "13")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/13.png "13")
 
 Respuesta de POSTMAN:
 
@@ -362,7 +364,7 @@ Respuesta de POSTMAN:
 
 En la parte derecha de POSTMAN en la pestaña **</>** se puede obtener el fragmento de código resultante, que servirá como documentación necesaria para la integración con el equipo de Frontend. Este fragmento es un archivo JSON con un formato de intercambio de datos utilizado para transmitir información en formato de texto entre diferentes aplicaciones. En este caso, el archivo JSON se está utilizando para realizar una solicitud POST usando la API de Kaleido. Esta solicitud se utiliza para crear una nueva puerta de enlace en la red Kaleido. El contenido del archivo JSON incluye información sobre los parámetros de la solicitud, tales como la dirección de la cuenta de la que se va a realizar la solicitud, la ABI de la aplicación, entre otros.
 
-[![14](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/14.png?raw=true "14")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/14.png?raw=true "14")
+[![14](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/14.png "14")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/14.png "14")
 
 Código JSON para documentación:
 
@@ -517,11 +519,11 @@ En la API REST de Kaleido en la sección **POST/{address}/registerPO** se puede 
 > Con esta implementación se logra garantizar que solo los usuarios autorizados (Participantes: Cliente, proveedor y Dawipo) puedan interactuar con el contrato inteligente, generando confirmaciones y que no haya manipulación maliciosa de los datos de la orden de compra.
 >
 
-[![15](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/15.png?raw=true "15")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/15.png?raw=true "15")
+[![15](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/15.png "15")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/15.png "15")
 
 En la respuesta del servidor muestra el Curl con el link para POSTMAN y la key de autorización, también muestra la respuesta con toda la información de la transacción realizada para registrar la nueva order.
 
-[![16](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/16.png?raw=true "16")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/16.png?raw=true "16")
+[![16](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/16.png "16")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/16.png "16")
 
 Respuesta del servidor:
 
@@ -551,7 +553,7 @@ Respuesta del servidor:
 
 Al intentar registrar la PO on el mismo ID directamente en POSTMAN, se logra comprobar mediante un error que la Purchase Order ya existe en la instancia del contrato. 
 
-[![17](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/17.png?raw=true "17")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/17.png?raw=true "17")
+[![17](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/17.png "17")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/17.png "17")
 
 Respuesta del servidor:
 
@@ -579,13 +581,13 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 En la API REST de Kaleido en la sección **POST/{address}/ParameterValidator** con el ID de la Purchase Order y el número "0" que equivale al estado "TO_BE_CONFIRMED", se puede hacer un llamado al smart contract y muestra como salida el status actual de la PO y un string que puede contener metadata del proceso hasta el momento.
 
-[![18](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/18.png?raw=true "18")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/18.png?raw=true "18")
+[![18](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/18.png "18")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/18.png "18")
 
-[![19](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/19.png?raw=true "19")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/19.png?raw=true "19")
+[![19](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/19.png "19")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/19.png "19")
 
 Se obtiene una respuesta correcta indicando que la Purchase Order esta en el estado TO_BE_CONFIRMED = status 0. Se realiza la respectiva configuración en POSTMAN del método y se obtiene el mismo resultado.
 
-[![20](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/20.png?raw=true "20")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/20.png?raw=true "20")
+[![20](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/20.png "20")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/20.png "20")
 
 Respuesta de POSTMAN:
 
@@ -618,9 +620,9 @@ En la API REST de Kaleido en la sección **POST/{address}/registerStep** con los
 >
 > 1. La variable metadata al ser tipo string solo admite texto plano, por lo tanto se hace necesario que la metadata de la orden de compra en cada step de los estados posibles se le agregue el archivo JSON codificado, debe enviarse al contrato como una cadena de caracteres codificada en base64.
 >
-> Para codificar el archivo JSON, se utilizó una herramienta en línea llamada https://www.base64encode.org/. Después de copiar y pegar el contenido del archivo JSON en el campo de entrada de la herramienta, con un clic en el botón "Encode" se obtendra la versión codificada en base64 de la cadena que admite la variable metadata.
+>    Para codificar el archivo JSON, se utilizó una herramienta en línea llamada https://www.base64encode.org/. Después de copiar y pegar el contenido del archivo JSON en el campo de entrada de la herramienta, con un clic en el botón "Encode" se obtendra la versión codificada en base64 de la cadena que admite la variable metadata.
 >
-> De igual manera al momento de leer la salida de los POST, se puede copiar la versión codificada en base64 de la cadena de metadata y pegarlo en la sección de "Decode" de la herramienta para obtener el JSON que se habia códificado.
+>    De igual manera al momento de leer la salida de los POST, se puede copiar la versión codificada en base64 de la cadena de metadata y pegarlo en la sección de "Decode" de la herramienta para obtener el JSON que se habia códificado.
 > 
 > 2. De acuerdo al flujo de ordenes de compra se puede despachar el producto por completo, en dos parciales, tres parciales ó n parciales. Por esto se dividieron en los siguientes tipos de ordenes con sus estados correspondientes, condicionando el contrato a que de acuerdo al tipo x de orden solo tendrá n estados posibles:
 >
@@ -673,7 +675,7 @@ JSON de prueba para codificar con 200 registros de campo y valor:
 }
 ```
 
-[![53](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/53.png?raw=true "53")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/53.png?raw=true "53")
+[![53](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/53.png "53")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/53.png "53")
 
 Resultado de codificación:
 
@@ -685,11 +687,11 @@ Resultado de codificación:
 }
 ```
 
-[![21](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/21.png?raw=true "21")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/21.png?raw=true "21")
+[![21](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/21.png "21")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/21.png "21")
 
 De manera efectiva se obtiene la información de la transacción en la red blockchain donde ahora el status de la order "1111" de tipo 1 es APPROVED = status 1.
 
-[![22](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/22.png?raw=true "22")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/22.png?raw=true "22")
+[![22](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/22.png "22")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/22.png "22")
 
 Respuesta del servidor:
 
@@ -729,7 +731,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 ```
 Usando el POSTMAN de ParameterValidator se puede verificar que la PO "1111" si se encuentra en status 1.
 
-[![23](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/23.png?raw=true "23")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/23.png?raw=true "23")
+[![23](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/23.png "23")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/23.png "23")
 
 Código JSON para documentación:
 
@@ -747,7 +749,7 @@ El código permite registrar y validar los siguientes estados hasta que la orden
 
 - BOOKING_REQUEST = status 2
 
-[![24](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/24.png?raw=true "24")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/24.png?raw=true "24")
+[![24](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/24.png "24")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/24.png "24")
 
 Respuesta de POSTMAN:
 
@@ -792,7 +794,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 Al intentar registrar otro paso para la PO tipo 1 que ya paso a estado BOOKING REQUEST, se genera el error: "The Purchase Order has no more steps", evitando que se incurra en pasos extra.
 
-[![29](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/29.png?raw=true "29")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/29.png?raw=true "29")
+[![29](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/29.png "29")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/29.png "29")
 
 Respuesta de POSTMAN:
 
@@ -805,7 +807,7 @@ Respuesta de POSTMAN:
 
 Otra función que permite el smart contract es validar estados anteriores junto con la metadata que quedo atada a este step, para esto se utiliza el POSTMAN de ParameterValidator que puede verificar los status de la PO "1111".
 
-[![30](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/30.png?raw=true "30")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/30.png?raw=true "30")
+[![30](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/30.png "30")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/30.png "30")
 
 Respuesta de POSTMAN:
 
@@ -830,7 +832,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 ```
 
-[![31](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/31.png?raw=true "31")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/31.png?raw=true "31")
+[![31](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/31.png "31")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/31.png "31")
 
 Respuesta de POSTMAN:
 
@@ -859,7 +861,7 @@ También facilita que al momento de crear otros Purchase Orders con otros ID, ti
 
 - Crear una nueva PO de tipo 3, con tres entregas parciales:
 
-[![32](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/32.png?raw=true "32")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/32.png?raw=true "32")
+[![32](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/32.png "32")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/32.png "32")
 
 Respuesta de POSTMAN:
 
@@ -902,7 +904,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 - Registrar un siguiente step del status Approved(1) de la PO "3333" tipo 3:
 
-[![33](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/33.png?raw=true "33")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/33.png?raw=true "33")
+[![33](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/33.png "33")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/33.png "33")
 
 Respuesta de POSTMAN:
 
@@ -947,7 +949,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 - Registrar un siguiente step del status To be confirmed P2(2) de la PO "3333" tipo 3:
 
-[![51](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/51.png?raw=true "51")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/51.png?raw=true "51")
+[![51](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/51.png "51")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/51.png "51")
 
 Respuesta de POSTMAN:
 
@@ -991,7 +993,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 - Registrar un siguiente step del status Approved P2(3) de la PO "3333" tipo 3:
 
-[![52](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/52.png?raw=true "52")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/52.png?raw=true "52")
+[![52](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/52.png "52")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/52.png "52")
 
 Respuesta de POSTMAN:
 
@@ -1036,7 +1038,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 - Registrar un siguiente step del status To be cofirmed P3(4) de la PO "3333" tipo 3:
 
-[![54](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/54.png?raw=true "54")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/54.png?raw=true "54")
+[![54](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/54.png "54")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/54.png "54")
 
 Respuesta de POSTMAN:
 
@@ -1081,7 +1083,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 - Registrar un siguiente step del status Approved P3(5) de la PO "3333" tipo 3:
 
-[![55](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/55.png?raw=true "54")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/55.png?raw=true "55")
+[![55](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/55.png "54")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/55.png "55")
 
 Respuesta de POSTMAN:
 
@@ -1125,7 +1127,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 - Registrar un siguiente step del status Booking Request(6) de la PO "3333" tipo 3:
 
-[![56](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/56.png?raw=true "56")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/56.png?raw=true "56")
+[![56](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/56.png "56")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/56.png "56")
 
 Respuesta de POSTMAN:
 
@@ -1168,11 +1170,11 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 - Al ser una orden de tipo 3 se entiende que el máximo estado al que debe llegar es Booking Request(6), al intentar agregar un step 7 se genera el error: The Purchase Order has no more steps.
 
-[![57](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/57.png?raw=true "57")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/57.png?raw=true "57")
+[![57](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/57.png "57")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/57.png "57")
 
 - Consultar parámetros guardados en el contrato de acuerdo al status To be confirmed P2(2) de la PO "3333" tipo 3:
 
-[![34](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/34.png?raw=true "34")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/34.png?raw=true "34")
+[![34](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/34.png "34")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/34.png "34")
 
 Respuesta de POSTMAN:
 
@@ -1198,7 +1200,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 Al decodificar la metadata que muestra registraba en el estado 2, se obtiene el archivo JSON correspondiente al estado To be confirmed(2):
 
-[![58](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/58.png?raw=true "58")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/58.png?raw=true "58")
+[![58](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/58.png "58")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/58.png "58")
 
 Parámetros del contrato en formato JSON:
 
@@ -1243,7 +1245,7 @@ Parámetros del contrato en formato JSON:
 
 - Consultar parámetros guardados en el contrato de acuerdo al status Booking Request(6) de la PO "3333" tipo 3:
 
-[![59](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/59.png?raw=true "59")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/59.png?raw=true "59")
+[![59](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/59.png "59")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/59.png "59")
 
 Respuesta de POSTMAN:
 
@@ -1269,7 +1271,7 @@ curl --location 'https://u0cqnbwz76-u0r2m5xw62-connect.us0-aws.kaleido.io/gatewa
 
 Al decodificar la metadata que muestra registraba en el estado 6, se obtiene el archivo JSON correspondiente al estado Booking Request(6):
 
-[![60](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/60.png?raw=true "60")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/60.png?raw=true "60")
+[![60](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/60.png "60")](https://github.com/rozoandrescamilo/BLCH-v1/blob/main/img/60.png?raw=true "60")
 
 Parámetros del contrato en formato JSON:
 
